@@ -1,0 +1,61 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tabs {
+  display: flex;
+  height: 50px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid var(--theme-light-shade-3);
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  cursor: pointer;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--theme-accent);
+  font-weight: bold;
+}
+
+.tab[aria-selected="true"]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: var(--theme-accent);
+}
+
+.tabsView {
+  display: flex;
+  flex: 1;
+}
+
+.tabsView:empty {
+  display: none;
+}
