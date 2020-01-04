@@ -32,9 +32,7 @@ export const analyseCombatLog = async (rawFile: File): Promise<CombatLog> => {
   raid = extract(log)
 
   console.log(
-    `[analyzer] Extracting raid for file ${rawFile.name}: ${ms(
-      start
-    )}`
+    `[analyzer] Extracting raid for file ${rawFile.name}: ${ms(start)}`
   )
 
   console.log(`[analyzer] Results for file ${rawFile.name}`, log, raid)

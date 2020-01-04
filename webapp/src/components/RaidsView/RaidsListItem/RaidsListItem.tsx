@@ -17,7 +17,9 @@ export const RaidsListItem: React.FC<Props> = ({ raid }) => {
       <div className={cx(styles.icon, icc)}></div>
       <div className={styles.raidTitle}>{raid.title}</div>
       <div className={styles.raidInstance}>({raid.instance.name})</div>
-      <div className={styles.raidDate}>{dayjs(raid.date).format('YYYY-MM-DD')}</div>
+      <div className={styles.raidDate}>
+        {dayjs(raid.date).format('YYYY-MM-DD')}
+      </div>
     </div>
   )
 }

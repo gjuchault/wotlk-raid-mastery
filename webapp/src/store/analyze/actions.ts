@@ -40,7 +40,7 @@ export const submitRaidRequest = (): SubmitRaidRequest => ({
 })
 
 export const submitRaidSuccess = (): SubmitRaidSuccess => ({
-  type: SUBMIT_RAID_SUCCESS,
+  type: SUBMIT_RAID_SUCCESS
 })
 
 export const submitRaidFailure = (error: string): SubmitRaidFailure => ({

@@ -72,11 +72,7 @@ export const getSpecsFromClass = (playerClass?: PlayerClass): PlayerSpec[] => {
         PlayerSpec.DroodResto
       ]
     case PlayerClass.Hunter:
-      return [
-        PlayerSpec.HuntBM,
-        PlayerSpec.HuntMMS,
-        PlayerSpec.HuntSurvival
-      ]
+      return [PlayerSpec.HuntBM, PlayerSpec.HuntMMS, PlayerSpec.HuntSurvival]
     case PlayerClass.Mage:
       return [PlayerSpec.MageArcane, PlayerSpec.MageFire, PlayerSpec.MageFrost]
     case PlayerClass.Paladin:
@@ -141,37 +137,68 @@ export const getSpecsFromClass = (playerClass?: PlayerClass): PlayerSpec[] => {
 
 export const getSpecName = (spec?: PlayerSpec) => {
   switch (spec) {
-    case PlayerSpec.DKBlood: return 'Blood'
-    case PlayerSpec.DKFrost: return 'Frost'
-    case PlayerSpec.DKUnholy: return 'UH'
-    case PlayerSpec.WarArms: return 'Arms'
-    case PlayerSpec.WarFury: return 'Fury'
-    case PlayerSpec.WarProt: return 'Prot'
-    case PlayerSpec.PalRet: return 'Ret'
-    case PlayerSpec.PalProt: return 'Prot'
-    case PlayerSpec.PalHoly: return 'Holy'
-    case PlayerSpec.DroodFeral: return 'Feral'
-    case PlayerSpec.DroodResto: return 'Resto'
-    case PlayerSpec.DroodBalance: return 'Balance'
-    case PlayerSpec.HuntBM: return 'BM'
-    case PlayerSpec.HuntSurvival: return 'Survival'
-    case PlayerSpec.HuntMMS: return 'MMS'
-    case PlayerSpec.WarlockDemono: return 'Demono'
-    case PlayerSpec.WarlockAffli: return 'Affli'
-    case PlayerSpec.WarlockDestru: return 'Destru'
-    case PlayerSpec.MageFrost: return 'Frost'
-    case PlayerSpec.MageFire: return 'Fire'
-    case PlayerSpec.MageArcane: return 'Arcane'
-    case PlayerSpec.ShamEnh: return 'Enh'
-    case PlayerSpec.ShamResto: return 'Resto'
-    case PlayerSpec.ShamElem: return 'Elem'
-    case PlayerSpec.PriestDisc: return 'Disco'
-    case PlayerSpec.PriestHoly: return 'Holy'
-    case PlayerSpec.PriestShadow: return 'Spriest'
-    case PlayerSpec.RogueCombat: return 'Combat'
-    case PlayerSpec.RogueSubtle: return 'Sub'
-    case PlayerSpec.RogueAssa: return 'Assa'
-    default: return ''
+    case PlayerSpec.DKBlood:
+      return 'Blood'
+    case PlayerSpec.DKFrost:
+      return 'Frost'
+    case PlayerSpec.DKUnholy:
+      return 'UH'
+    case PlayerSpec.WarArms:
+      return 'Arms'
+    case PlayerSpec.WarFury:
+      return 'Fury'
+    case PlayerSpec.WarProt:
+      return 'Prot'
+    case PlayerSpec.PalRet:
+      return 'Ret'
+    case PlayerSpec.PalProt:
+      return 'Prot'
+    case PlayerSpec.PalHoly:
+      return 'Holy'
+    case PlayerSpec.DroodFeral:
+      return 'Feral'
+    case PlayerSpec.DroodResto:
+      return 'Resto'
+    case PlayerSpec.DroodBalance:
+      return 'Balance'
+    case PlayerSpec.HuntBM:
+      return 'BM'
+    case PlayerSpec.HuntSurvival:
+      return 'Survival'
+    case PlayerSpec.HuntMMS:
+      return 'MMS'
+    case PlayerSpec.WarlockDemono:
+      return 'Demono'
+    case PlayerSpec.WarlockAffli:
+      return 'Affli'
+    case PlayerSpec.WarlockDestru:
+      return 'Destru'
+    case PlayerSpec.MageFrost:
+      return 'Frost'
+    case PlayerSpec.MageFire:
+      return 'Fire'
+    case PlayerSpec.MageArcane:
+      return 'Arcane'
+    case PlayerSpec.ShamEnh:
+      return 'Enh'
+    case PlayerSpec.ShamResto:
+      return 'Resto'
+    case PlayerSpec.ShamElem:
+      return 'Elem'
+    case PlayerSpec.PriestDisc:
+      return 'Disco'
+    case PlayerSpec.PriestHoly:
+      return 'Holy'
+    case PlayerSpec.PriestShadow:
+      return 'Spriest'
+    case PlayerSpec.RogueCombat:
+      return 'Combat'
+    case PlayerSpec.RogueSubtle:
+      return 'Sub'
+    case PlayerSpec.RogueAssa:
+      return 'Assa'
+    default:
+      return ''
   }
 }
 

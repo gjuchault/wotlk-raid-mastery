@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux"
-import dayjs from "dayjs"
+import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import dayjs from 'dayjs'
 
-import { Player } from "../../../domain/player"
-import { Raid } from "../../../domain/raid"
-import { getLog } from "../../../store/analyze/selectors"
-import { clearAnalysis } from "../../../store/analyze/actions"
-import { submitRaid } from "../../../store/analyze/thunks"
+import { Player } from '../../../domain/player'
+import { Raid } from '../../../domain/raid'
+import { getLog } from '../../../store/analyze/selectors'
+import { clearAnalysis } from '../../../store/analyze/actions'
+import { submitRaid } from '../../../store/analyze/thunks'
 
 const defaultRaid = {
   id: 0,
@@ -16,7 +16,7 @@ const defaultRaid = {
   logsSum: '',
   instance: {
     maxPlayers: 0,
-    name: '',
+    name: ''
   },
   players: [],
   loots: [],
@@ -52,7 +52,7 @@ export const useCreateRaidForm = () => {
       ...raid,
       instance: {
         ...raid.instance,
-        name: e.currentTarget.value,
+        name: e.currentTarget.value
       }
     })
   }

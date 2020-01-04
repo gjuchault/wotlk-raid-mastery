@@ -85,7 +85,7 @@ export const RaidsViewCreate: React.FC = () => {
         <div className={cx(styles.row, styles.category)}>
           <strong>Players</strong>
         </div>
-        {raid.players.map((player) => {
+        {raid.players.map(player => {
           return (
             <div key={player.id!} className={styles.row}>
               <input

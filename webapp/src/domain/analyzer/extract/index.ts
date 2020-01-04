@@ -5,6 +5,7 @@ import { isRaidPlayer } from './unitFlag'
 import { Raid } from '../../raid'
 import { getClassSpecAndRole } from './classSpec'
 import { getInstance } from './instance'
+import { getKilledBoss } from './boss'
 
 export const extract = (log: CombatLog) => {
   if (!log.events) {
@@ -19,7 +20,7 @@ export const extract = (log: CombatLog) => {
     logsSum: log.logsSum,
     instance: {
       maxPlayers: 0,
-      name: '',
+      name: ''
     },
     players: [],
     loots: [],
@@ -50,6 +51,8 @@ export const extract = (log: CombatLog) => {
     name: getInstance(log),
     maxPlayers: players.size > 20 ? 25 : 10
   }
+
+  raid.bosses = getKilledBoss(log)
 
   // IDEA: dps
 
