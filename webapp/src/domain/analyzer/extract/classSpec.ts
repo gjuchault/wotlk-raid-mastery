@@ -38,10 +38,6 @@ enum Spells {
 }
 
 export const getClassSpecAndRole = (log: CombatLog, playerName: string) => {
-  if (!log.events) {
-    throw new Error(`CombatLog is missing events`)
-  }
-
   for (const { eventType, sourceName, params } of log.events) {
     if (eventType !== 'SPELL_CAST_SUCCESS' || sourceName !== playerName) {
       continue

@@ -37,9 +37,11 @@ export const RaidsView: React.FC = () => {
       <RaidsViewLoading />
       <RaidsViewCreate />
       <RaidsViewUpload />
-      {raids.map(raid => (
-        <RaidsListItem key={raid.id} raid={raid} />
-      ))}
+      <div className={styles.raidsList}>
+        {raids.map(raid => (
+          <RaidsListItem key={raid.id} raid={raid} />
+        ))}
+      </div>
     </div>
   )
 }

@@ -1,3 +1,59 @@
 .raid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 550px;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,.3);
+  cursor: pointer;
 
+  transition:
+    .2s background-color ease,
+    .2s box-shadow ease;
+}
+
+.raid:hover {
+  background-color: var(--theme-dark-shade-1);
+  box-shadow:
+    0 0.5px 0.9px rgba(0, 0, 0, 0.02),
+    0 1.2px 2.1px rgba(0, 0, 0, 0.028),
+    0 2.3px 4px rgba(0, 0, 0, 0.035),
+    0 4px 7.1px rgba(0, 0, 0, 0.042),
+    0 7.5px 13.4px rgba(0, 0, 0, 0.05),
+    0 18px 32px rgba(0, 0, 0, 0.07)
+  ;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+}
+
+.icc {
+  background-image: url(../../../assets/icc.jpg);
+}
+
+.rs {
+  background-image: url(../../../assets/rs.jpg);
+}
+
+.toc {
+  background-image: url(../../../assets/toc.jpg);
+}
+
+.raidTitle {
+  margin: 0 12px;
+}
+
+.raidInstance {
+  margin: 0 12px;
+}
+
+.raidDate {
+  margin: 0 12px;
 }
