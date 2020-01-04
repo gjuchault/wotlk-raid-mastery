@@ -42,6 +42,7 @@ export const submitRaid = (
       date: payload.date,
       logsSum: payload.logsSum,
       instance: payload.instance.name,
+      bosses: payload.bosses,
       maxPlayers: payload.instance.maxPlayers,
       players: payload.players
     })

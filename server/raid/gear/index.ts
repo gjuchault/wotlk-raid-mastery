@@ -92,13 +92,18 @@ interface CharacterError {
 }
 
 export const getGearscoreForPlayer = async (name: string): Promise<number> => {
+  if (process.env.MOCK_GS) {
+    return Math.floor(Math.random() * (6500 - 6000 + 1) + 6000)
+  }
+
+  await new Promise((resolve) => setTimeout(resolve, 500))
 
   // IDEA: variable server?
   // IDEA: get gear from addon
   const { data } = await axios.get<CharacterResponse | CharacterError>(`https://armory.warmane.com/api/character/${name}/Lordaeron/summary`)
 
   if ((data as CharacterError).error) {
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 2000))
     return getGearscoreForPlayer(name)
   }
 

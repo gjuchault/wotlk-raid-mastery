@@ -47,12 +47,12 @@ export const extract = (log: CombatLog) => {
     })
   }
 
+  raid.bosses = getKilledBoss(log)
+
   raid.instance = {
-    name: getInstance(log),
+    name: getInstance(raid),
     maxPlayers: players.size > 20 ? 25 : 10
   }
-
-  raid.bosses = getKilledBoss(log)
 
   // IDEA: dps
 

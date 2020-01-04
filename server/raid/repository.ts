@@ -17,6 +17,10 @@ export interface RaidBody {
   maxPlayers: number
   date: string
   logsSum: string
+  bosses: {
+    name: string
+    heroic: boolean
+  }[]
   players: {
     name: string
     class: string
@@ -141,6 +145,18 @@ export const buildRaidRepository = ({ storage, log }: RaidRepositoryParameters):
     ])
 
     const [{raidId}] = await storage.get<{ raidId: number }>(`select last_insert_rowid() as raidId`)
+
+    for (const boss of raid.bosses) {
+      await storage.run(`
+      insert into
+        raidBosses (raidId, name, heroic)
+        values (?, ?, ?)
+      `, [
+        raidId,
+        boss.name,
+        Number(boss.heroic)
+      ])
+    }
 
     for (const player of raid.players) {
       let gearscore = 0

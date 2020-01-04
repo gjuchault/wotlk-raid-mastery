@@ -65,7 +65,9 @@ export const schemas = [
     create table if not exists raidBosses
     (
       raidId integer not null references raids(id),
-      bossId text not null references bosses(name)
+      name text not null,
+      heroic integer,
+      foreign key (name, heroic) references bosses(name, heroic)
     )
   `,
   `

@@ -52,7 +52,7 @@ export const buildParser = ({ lastModified }: { lastModified: number }) => {
       date: parseDatetime(datetime),
       eventType,
       sourceGuid: parseInt(sourceGuid, 16),
-      sourceName: sourceName.slice(1, -1),
+      sourceName: sourceName === 'nil' ? '' : sourceName.slice(1, -1),
       sourceFlags: parseInt(sourceFlags, 16),
       destGuid: parseInt(destGuid, 16),
       destName: destName.slice(1, -1),

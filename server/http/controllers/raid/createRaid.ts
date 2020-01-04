@@ -15,6 +15,10 @@ type RaidBody = {
   maxPlayers: number
   date: string
   logsSum: string
+  bosses: {
+    name: string
+    heroic: boolean
+  }[]
   players: {
     name: string
     class: string
@@ -29,6 +33,10 @@ const createRaidBodyValidator = Joi.object({
   maxPlayers: Joi.number().required(),
   date: Joi.string().required(),
   logsSum: Joi.string().required(),
+  bosses: Joi.array().items(Joi.object({
+    name: Joi.string().required(),
+    heroic: Joi.bool().required()
+  })),
   players: Joi.array().items(Joi.object({
     name: Joi.string().required(),
     class: Joi.string().required(),
