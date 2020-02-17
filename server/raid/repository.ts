@@ -2,7 +2,6 @@ import { Storage } from '../storage'
 import { Log } from '../log'
 import { DatabaseRaid, Raid, DatabaseInstance, DatabasePlayer, DatabaseBoss, DatabaseLoot } from './types'
 import { parseRaid, buildRaid } from './transform'
-import { PaginatedResults } from '../helpers/pagination'
 
 import { getGearscoreForPlayer } from './gear'
 
@@ -29,8 +28,13 @@ export interface RaidBody {
   }[]
 }
 
+interface PaginatedRaids {
+  nextCursor: number | null
+  raids: Raid[]
+}
+
 export interface RaidRepository {
-  fetchRaids: (offset?: number, limit?: number) => Promise<PaginatedResults<Raid>>
+  fetchRaids: (offset?: number, limit?: number) => Promise<PaginatedRaids>
   fetchRaid: (raidId: number) => Promise<Raid | null>
   createRaid: (raid: RaidBody) => Promise<void>
 }
@@ -67,7 +71,7 @@ export const buildRaidRepository = ({ storage, log }: RaidRepositoryParameters):
 
     return {
       nextCursor: raids.length > limit ? offset + limit : null,
-      data: raids.slice(0, limit)
+      raids: raids.slice(0, limit)
     }
   }
 
@@ -111,7 +115,7 @@ export const buildRaidRepository = ({ storage, log }: RaidRepositoryParameters):
         select
           b.*
         from raidBosses rb
-        join bosses b on rb.bossId = b.id
+        join bosses b on rb.name = b.name and rb.heroic = b.heroic
         where rb.raidId = ?
       `,
       [ raid.id ]

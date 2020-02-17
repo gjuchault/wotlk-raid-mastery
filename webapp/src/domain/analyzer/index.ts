@@ -4,6 +4,7 @@ import { extract } from './extract'
 import { CombatLog } from '../combatLog'
 import { read } from '../../utils/read'
 import { filesize } from '../../utils/filesize'
+import dayjs from 'dayjs'
 
 export interface Meta {
   lastModified: number
@@ -38,7 +39,7 @@ export const analyseCombatLog = async (rawFile: File): Promise<CombatLog> => {
   console.log(`[analyzer] Results for file ${rawFile.name}`, log, raid)
 
   return {
-    date: log.date,
+    date: dayjs(log.events[0].date).hour(0).minute(0).second(0),
     events: log.events,
     logsSum: log.logsSum,
     raid

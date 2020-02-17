@@ -71,7 +71,7 @@ export const schemas = [
     )
   `,
   `
-    create table if not exists loot
+    create table if not exists loots
     (
       id integer primary key autoincrement,
       raidId integer not null references raids(id),

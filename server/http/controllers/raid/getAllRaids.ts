@@ -28,7 +28,7 @@ export const buildGetAllRaids = ({
     }).end()
   }
 
-  const { nextCursor, data } = await raidRepository.fetchRaids(
+  const { nextCursor, raids } = await raidRepository.fetchRaids(
     query.cursor,
     query.limit
   )
@@ -36,6 +36,6 @@ export const buildGetAllRaids = ({
   return res.status(200).json({
     outcome: 'success',
     nextCursor,
-    data
+    raids
   }).end()
 }

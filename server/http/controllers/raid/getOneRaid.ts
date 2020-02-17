@@ -24,8 +24,8 @@ export const buildGetOneRaid = ({
     }
   }
 
-  return {
+  return res.status(200).json({
     outcome: 'success',
     raid
-  }
+  })
 }

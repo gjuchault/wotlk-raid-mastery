@@ -1,10 +1,5 @@
 import axios, { AxiosError } from 'axios'
 
-export interface RequestSuccess<TResult> {
-  outcome: 'result'
-  data: TResult[]
-}
-
 export interface RequestFailure {
   outcome: 'failure'
   error: string

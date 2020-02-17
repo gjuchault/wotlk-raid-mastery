@@ -1,0 +1,35 @@
+.raidPlayersList {
+  display: grid;
+  width: 350px;
+  grid-template-columns: 1fr auto auto auto auto;
+  grid-gap: 2px 4px;
+  padding: 8px;
+
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 4px;
+  text-align: left;
+}
+
+.title {
+  text-align: center;
+  grid-column: 1 / 6;
+  padding: 0 0 8px 0;
+}
+
+.header {
+  font-weight: bold;
+  padding: 0 0 8px 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+.center {
+  justify-content: center;
+}

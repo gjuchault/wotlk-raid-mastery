@@ -29,3 +29,18 @@ export interface Loot {
   playerId: number
   wowId: number
 }
+
+export const reshapeRaidFromApi = (raid: any): Raid => ({
+  id: raid.id,
+  date: dayjs(raid.date),
+  title: raid.title,
+  logs: '',
+  logsSum: raid.logsSum,
+  instance: {
+    name: raid.instance.name,
+    maxPlayers: raid.instance.maxPlayers,
+  },
+  players: raid.players,
+  loots: raid.loots,
+  bosses: raid.bosses
+})

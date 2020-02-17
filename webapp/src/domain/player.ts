@@ -135,6 +135,48 @@ export const getSpecsFromClass = (playerClass?: PlayerClass): PlayerSpec[] => {
   }
 }
 
+export const getClassName = (playerClass?: PlayerClass) => {
+  switch (playerClass) {
+    case PlayerClass.DeathKnight:
+      return 'Death Knight'
+    case PlayerClass.Druid:
+      return 'Druid'
+    case PlayerClass.Hunter:
+      return 'Hunter'
+    case PlayerClass.Mage:
+      return 'Mage'
+    case PlayerClass.Paladin:
+      return 'Paladin'
+    case PlayerClass.Priest:
+      return 'Priest'
+    case PlayerClass.Rogue:
+      return 'Rogue'
+    case PlayerClass.Shaman:
+      return 'Shaman'
+    case PlayerClass.Warlock:
+      return 'Warlock'
+    case PlayerClass.Warrior:
+      return 'Warrior'
+    default:
+      return ''
+  }
+}
+
+export const getRoleName = (role?: PlayerRole) => {
+  switch (role) {
+    case PlayerRole.Healer:
+      return 'Healer'
+    case PlayerRole.MeleeDps:
+      return 'Melee'
+    case PlayerRole.RangedDps:
+      return 'Ranged'
+    case PlayerRole.Tank:
+      return 'Tank'
+    default:
+      return ''
+  }
+}
+
 export const getSpecName = (spec?: PlayerSpec) => {
   switch (spec) {
     case PlayerSpec.DKBlood:

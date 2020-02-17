@@ -1,12 +1,14 @@
 import { Reducer } from 'redux'
-import { Action, SET_MODE } from './actionTypes'
+import { Action, SET_MODE, SET_DETAILED_RAID_ID } from './actionTypes'
 
 type State = {
-  mode: 'players' | 'raids'
+  mode: 'players' | 'raids',
+  detailedRaidId: number | null
 }
 
 const initialState: State = {
-  mode: 'raids'
+  mode: 'raids',
+  detailedRaidId: null
 }
 
 export const reducer: Reducer<State, Action> = (
@@ -18,6 +20,11 @@ export const reducer: Reducer<State, Action> = (
       return {
         ...state,
         mode: action.payload
+      }
+    case SET_DETAILED_RAID_ID:
+      return {
+        ...state,
+        detailedRaidId: action.payload
       }
     default:
       return state
